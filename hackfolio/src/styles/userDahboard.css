@@ -1,0 +1,115 @@
+.relative {
+  position: relative;
+}
+
+.z-20 {
+  z-index: 10;
+}
+
+.z-50 {
+  z-index: 5000;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.bg-dark-blue {
+  background-color: #0f172a;
+  position: relative;
+  color: white;
+}
+
+.animated-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.animated-shapes::before,
+.animated-shapes::after,
+.animated-shapes .circle {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(68, 43, 186, 1);
+  animation: moveShape 10s linear infinite;
+}
+
+.animated-shapes::before {
+  width: 350px;
+  height: 350px;
+  top: 10%;
+  left: 50%;
+  animation-duration: 15s;
+}
+
+.animated-shapes::after {
+  width: 250px;
+  height: 250px;
+  top: 30%;
+  left: 20%;
+  animation-duration: 20s;
+}
+
+.animated-shapes .circle {
+  width: 180px;
+  height: 180px;
+  top: 50%;
+  left: 70%;
+  animation-duration: 12s;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes moveShape {
+  0% {
+    transform: translateX(-100%) translateY(-100%);
+  }
+  50% {
+    transform: translateX(100%) translateY(100%);
+  }
+  100% {
+    transform: translateX(-100%) translateY(-100%);
+  }
+}
+
+/* Additional hardcoded shapes inside the card */
+.card-shapes::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.15);
+  animation: rotateShape 12s linear infinite;
+}
+
+.card-shapes::after {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  animation: rotateShape 18s linear infinite;
+}
+
+@keyframes rotateShape {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

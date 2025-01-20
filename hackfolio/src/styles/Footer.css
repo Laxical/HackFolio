@@ -1,0 +1,81 @@
+/* General Footer Styles */
+.footer {
+    position: relative;
+    background-color: #f9f4e4;
+    color: #333;
+    font-family: Arial, sans-serif;
+    padding: 40px 0;
+    overflow: hidden;
+  }
+  
+  .footer:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background-color: #f1e9c3;
+    z-index: -1;
+    border-bottom-right-radius: 100px; /* Adds the curved background effect */
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .slogan {
+    text-align: center;
+    margin-bottom: 30px;
+    width: 250px;
+  }
+  
+  .slogan h2 {
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .highlight-green {
+    color: #77d3a1;
+  }
+  
+  .highlight-purple {
+    color: #ca84f9;
+  }
+  
+  
+  /* Footer Links */
+  .footer-links {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    margin-bottom: 40px;
+  }
+  
+  .footer-links h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: 8px;
+  }
+  
+  .footer-links a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  
+  
+  

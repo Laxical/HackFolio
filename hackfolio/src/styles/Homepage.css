@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Lato:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+.body {
+  margin: 0;
+  font-family: 'Lato', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(#222c31, #111d32);
+  /* color: #6880ac; */
+  min-height: 100vh;
+}
+.Projects {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 20px;
+  gap: 20px;
+  background-color: #f9f9f9;
+}
+
+.projects-content {
+  flex: 1;
+  max-width: 50%;
+}
+
+.projects-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.projects-description {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.add-project-button {
+  padding: 10px 20px;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.add-project-button:hover {
+  background-color: #4338ca;
+}
+
+.projects-animation {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

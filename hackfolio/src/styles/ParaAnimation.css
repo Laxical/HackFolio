@@ -1,0 +1,69 @@
+.Parallax {
+    height: 70vh; /* Full screen height */
+    overflow: hidden; /* Prevent scrolling */
+    position: relative; /* Ensure positioning of layers */
+}
+
+.gradient-bg {
+    background: #2E236C;
+    background-size: 400% 400%;
+    animation: gradient-animation 10s ease infinite;
+    height: 100vh; /* Match parallax layer height */
+    width: 100%; /* Full width */
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.split-text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 5rem;
+    /*font-weight: bold;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 50%;
+    top:0;
+    left: 0;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.line {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.text-left,
+.text-right {
+    display: inline-block;
+    transition: transform 0.5s, opacity 0.5s;
+    padding: 0 1rem;
+}
+
+.split-text.scrolled .text-left {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.split-text.scrolled .text-right {
+    transform: translateX(100%);
+    opacity: 0;
+}

@@ -1,0 +1,17 @@
+
+
+@keyframes linearMove {
+    0% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(10px) translateY(10px); /* Slight linear motion */
+    }
+    100% {
+      transform: translateX(0) translateY(0); /* Returns to the original place */
+    }
+  }
+  
+  .animate-linear-move {
+    animation: linearMove 2s ease-in-out infinite; /* Adjust duration as needed */
+  }

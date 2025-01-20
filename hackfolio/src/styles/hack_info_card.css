@@ -1,0 +1,11 @@
+.hack-info-card {
+    height: 450px;
+    width: 400px;
+    background-color: white;
+    border-radius: 20px;
+    transition: all 0.05s ease-out;
+    box-shadow: 2px 2px 5px hsl(0, 0%, 88%);
+    padding: 20px;
+    box-sizing: border-box;
+    border:solid 2px transparent;
+}
