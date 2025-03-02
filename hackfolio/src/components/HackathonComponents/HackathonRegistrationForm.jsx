@@ -49,6 +49,7 @@ function HackathonRegistrationForm() {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(formData),
+                credentials: 'include',
             });
             if(response.status === 403) navigate('/Error403');
             if (!response.ok) throw new Error('Network response was not ok');

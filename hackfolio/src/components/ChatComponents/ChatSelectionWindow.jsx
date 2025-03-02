@@ -12,7 +12,13 @@ function ChatSelectionWindow(props) {
 
     async function getUsers() {
         try {
-            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/chat/getFriends`);
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/chat/getFriends`, {
+                method: "GET",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                credentials: 'include',
+            });
             if (!response.ok) throw new Error('Network response was not ok');
             const data = await response.json();
             setData(data.data);
@@ -32,6 +38,7 @@ function ChatSelectionWindow(props) {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({email}),
+                credentials: 'include',
             });
             console.log(await response.json())
             if (!response.ok) throw new Error('Network response was not ok');

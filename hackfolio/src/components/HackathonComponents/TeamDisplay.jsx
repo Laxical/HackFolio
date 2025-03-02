@@ -18,6 +18,7 @@ function TeamDisplay(props) {
                 headers: {
                     'Content-Type': 'application/json',
                 },
+                credentials: 'include',
             });
             if(response.status === 403) navigate('/Error403');
             const data = await response.json();

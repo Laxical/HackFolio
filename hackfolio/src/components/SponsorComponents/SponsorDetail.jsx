@@ -35,7 +35,13 @@ const SponsorDetail = () => {
 
     newSocket.on('disconnect', async () => {
       try {
-        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/chat/disconnect`);
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/chat/disconnect`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: 'include',
+        });
         if (!response.ok) throw new Error('Network response was not ok');
         await response.json();
       } catch (error) {
@@ -78,6 +84,7 @@ const SponsorDetail = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ message }),
+        credentials: 'include',
       });
 
       if (!response.ok) throw new Error('Network response was not ok');

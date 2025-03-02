@@ -28,6 +28,7 @@ function NotificationsComponent(props) {
                 headers: {
                     'Content-Type': 'application/json',
                 },
+                credentials: 'include',
             });
             if (!response.ok) throw new Error('Network response was not ok');
             setData(await response.json());

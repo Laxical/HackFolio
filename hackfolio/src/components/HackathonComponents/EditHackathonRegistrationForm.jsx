@@ -54,7 +54,13 @@ function EditHackathonRegistrationForm() {
 
     async function getInfo() {
         try {
-            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/hackathon/registerForHackathon/${name}`);
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/hackathon/registerForHackathon/${name}`, {
+                method: "GET",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                credentials: 'include',
+              });
             if(response.status === 403) navigate('/Error403');
             if (!response.ok) throw new Error('Network response was not ok');
             const arr = await response.json();
@@ -98,6 +104,7 @@ function EditHackathonRegistrationForm() {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(formData),
+                credentials: 'include',
             });
             if(response.status === 403) navigate('/Error403');
             if (!response.ok) throw new Error('Network response was not ok');

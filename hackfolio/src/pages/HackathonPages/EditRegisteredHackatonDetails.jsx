@@ -21,7 +21,13 @@ function EditRegisteredHackathonDetails() {
 
     async function handle() {
         try {
-            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/hackathon/registerForHackathon/${name}`);
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/hackathon/registerForHackathon/${name}`, {
+                method: "GET",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                credentials: 'include',
+              });
             if (!response.ok) throw new Error('Network response was not ok');
             const arr = await response.json();
             if (!arr.data.teamCode) setInTeam(false);

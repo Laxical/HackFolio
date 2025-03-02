@@ -65,7 +65,13 @@ function EditHackathonWebsite() {
 
     async function getWebInfo() {
         try {
-            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/hackathon/updateHackWebsite/${name}`);
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/hackathon/updateHackWebsite/${name}`, {
+                method: "GET",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                credentials: 'include',
+              });
             if(response.status === 403) navigate('/Error403');
             const arr = await response.json();
             setData(arr.data);
@@ -98,6 +104,7 @@ function EditHackathonWebsite() {
                     aboutPrize,
                     otherFields,
                 }),
+                credentials: 'include',
             });
             if(response.status === 403) navigate('/Error403');
             setLoading(false);

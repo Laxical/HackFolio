@@ -17,6 +17,7 @@ function RegisteredHackathonsDisplay() {
         headers: {
           'Content-Type': 'application/json'
         },
+        credentials: 'include'
       });
       if (response.status === 403) navigate('/Error403');
       if (!response.ok) {

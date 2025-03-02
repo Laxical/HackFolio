@@ -55,6 +55,7 @@ function HackathonDetailsForm(props) {
                 headers: {
                     'Content-Type': 'application/json'
                 },
+                credentials: 'include',
             });
             if(response.status === 403) navigate('/Error403');
 
@@ -96,6 +97,7 @@ function HackathonDetailsForm(props) {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({ hackName, uniName, eventMode, tech, teamSize, partProf, contactLinks, fromDate, toDate, prizesDesc }),
+                credentials: 'include',
             });
             if(response.status === 403) navigate('/Error403');
 

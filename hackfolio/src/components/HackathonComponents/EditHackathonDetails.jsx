@@ -35,7 +35,13 @@ function EditHackathonDetails(props) {
 
     async function getHackInfo() {
         try {
-            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/hackathon/updateHackDetails/${name}`);
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/hackathon/updateHackDetails/${name}`, {
+                method: "GET",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                credentials: 'include',
+              });
             if(response.status === 403) navigate('/Error403');
             const arr = await response.json();
             setData(arr.data);
@@ -64,6 +70,7 @@ function EditHackathonDetails(props) {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(formData),
+                credentials: 'include',
             });
             if(response.status === 403) navigate('/Error403');
             console.log(await response.json())

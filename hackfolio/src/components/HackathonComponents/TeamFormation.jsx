@@ -18,6 +18,7 @@ function TeamFormation(props) {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({teamName}),
+                credentials: 'include',
             });
             if(response.status === 403) navigate('/Error403');
             if(response.status === 400) {
@@ -46,6 +47,7 @@ function TeamFormation(props) {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({ teamCode }),
+                    credentials: 'include',
                 });
                 if(response.status === 403) navigate('/Error403');
                 const data = await response.json();

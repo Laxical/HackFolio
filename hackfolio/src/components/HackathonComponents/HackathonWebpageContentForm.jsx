@@ -79,6 +79,7 @@ function HackathonWebpageContentForm(props) {
                     aboutPrize,
                     otherFields,
                 }),
+                credentials: 'include',
             });
             if (response.status === 403) navigate('/Error403');
 

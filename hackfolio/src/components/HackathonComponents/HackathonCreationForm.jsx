@@ -17,11 +17,13 @@ function HackathonCreationForm(props) {
             return;
         }
         try {
+            console.log(import.meta.env.VITE_BACKEND_URL);
             const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/hackathon/hackathonCreate`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
+                credentials: 'include',
                 body: JSON.stringify({ hackName, uniName }),
             });
 

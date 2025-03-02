@@ -43,7 +43,13 @@ function EditSponsorsDetails() {
 
     async function getSponsorInfo() {
         try {
-            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/sponsors/updateSponsorDetails`);
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/sponsors/updateSponsorDetails`, {
+                method: "GET",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                credentials: 'include',
+              });
             if (!response.ok) throw new Error('Network response was not ok');
             const arr = await response.json();
             setData(arr.data);
@@ -73,6 +79,7 @@ function EditSponsorsDetails() {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({formData}),
+                credentials: 'include',
             });
             if (!response.ok) throw new Error('Network response was not ok');
             console.log(await response.json());

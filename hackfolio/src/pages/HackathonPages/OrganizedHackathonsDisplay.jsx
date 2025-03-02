@@ -17,6 +17,7 @@ function OrganizedHackathonsDisplay() {
                 headers: {
                     "Content-Type": "application/json",
                 },
+                credentials: "include",
             });
             if (response.status === 403) navigate("/Error403");
             if (!response.ok) {
@@ -41,6 +42,7 @@ function OrganizedHackathonsDisplay() {
                 headers: {
                     "Content-Type": "application/json",
                 },
+                credentials: "include",
             });
             if (response.status === 403) navigate("/Error403");
             const data = await response.json();
