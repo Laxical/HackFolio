@@ -131,6 +131,17 @@ app.use("/api/chat",chat_backend(io));
 app.use("/api/judge",judges);
 app.use("/api/project",hack_project);
 
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  
+  const statusCode = err.status || 500;
+
+  res.status(statusCode).json({
+    success: false,
+    message: err.message || "Internal Server Error",
+  });
+});
+
 server.listen(5000, () => { console.log("Server started on port 5000 ... (http://localhost:5000/)") });
 
 // module.exports = server;
