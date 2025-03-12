@@ -83,7 +83,7 @@ function HackathonDetailsForm(props) {
             }
         }
         if(new Date(fromDate) > new Date(toDate)) {
-            alert("Time goes forward boss! from date should be less than to data");
+            alert("Time goes forward! ... 'from' date should be less than 'to' data");
             return;
         }
         if(new Date(fromDate) < new Date() || new Date(toDate) < new Date()) {

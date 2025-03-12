@@ -23,6 +23,8 @@ const judges=require('./controller/Judges');
 const hack_project = require('./controller/project');
 const userProfile = require("./controller/userProfileEdit");
 
+require('dotenv').config();
+
 const corsOptions = {
   origin: process.env.FRONTEND_URL,
   credentials: true,
@@ -32,6 +34,7 @@ const corsOptions = {
 };
 
 if (process.env.NODE_ENV === 'development') {
+  console.log("herreeeeee");
   const logDirectory = path.join(__dirname, 'logs');
   require('fs').existsSync(logDirectory) || require('fs').mkdirSync(logDirectory);
   
@@ -50,7 +53,6 @@ if (process.env.NODE_ENV === 'development') {
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors(corsOptions));
-require('dotenv').config();
 
 const io = new Server(server, {
   cors: corsOptions
