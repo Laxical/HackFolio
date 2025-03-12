@@ -31,22 +31,21 @@ const corsOptions = {
   sameSite:'none',
 };
 
-const logDirectory = path.join(__dirname, 'logs');
-require('fs').existsSync(logDirectory) || require('fs').mkdirSync(logDirectory);
+// const logDirectory = path.join(__dirname, 'logs');
+// require('fs').existsSync(logDirectory) || require('fs').mkdirSync(logDirectory);
 
-const accessLogStream = rfs.createStream('access.log', {
-  interval: '1d',
-  path: logDirectory,
-  size: '10M', 
-  compress: 'gzip' 
-});
+// const accessLogStream = rfs.createStream('access.log', {
+//   interval: '1d',
+//   path: logDirectory,
+//   size: '10M', 
+//   compress: 'gzip' 
+// });
 
+// app.use(morgan('combined', { stream: accessLogStream }));
 
-app.use(morgan('combined', { stream: accessLogStream }));
-
-if (process.env.NODE_ENV !== 'production') {
-  app.use(morgan('dev'));
-}
+// if (process.env.NODE_ENV !== 'production') {
+//   app.use(morgan('dev'));
+// }
 
 app.use(express.json());
 app.use(cookieParser());
