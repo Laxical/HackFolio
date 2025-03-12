@@ -6,6 +6,9 @@ const { Server } = require("socket.io");
 const mongoose = require("mongoose");
 const cookieParser=require("cookie-parser");
 const cors = require("cors");
+const morgan = require('morgan');
+const rfs = require('rotating-file-stream');
+const path = require('path');
 
 const hack_create = require("./controller/hackathon_creation");
 const userlogin=require("./controller/userRegistration");
@@ -20,18 +23,36 @@ const judges=require('./controller/Judges');
 const hack_project = require('./controller/project');
 const userProfile = require("./controller/userProfileEdit");
 
+require('dotenv').config();
+
 const corsOptions = {
-  origin: process.env.FRONTEND_URL,
+  origin: process.env.FRONTEND_URL || "http://localhost:5173",
   credentials: true,
   httpOnly: true ,
   secure: true,
   sameSite:'none',
 };
 
+const logDirectory = path.join(__dirname, 'logs');
+require('fs').existsSync(logDirectory) || require('fs').mkdirSync(logDirectory);
+
+const accessLogStream = rfs.createStream('access.log', {
+  interval: '1d',
+  path: logDirectory,
+  size: '10M', 
+  compress: 'gzip' 
+});
+
+
+app.use(morgan('combined', { stream: accessLogStream }));
+
+if (process.env.NODE_ENV !== 'production') {
+  app.use(morgan('dev'));
+}
+
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors(corsOptions));
-require('dotenv').config();
 
 const io = new Server(server, {
   cors: corsOptions
