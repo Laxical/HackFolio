@@ -23,8 +23,6 @@ const judges=require('./controller/Judges');
 const hack_project = require('./controller/project');
 const userProfile = require("./controller/userProfileEdit");
 
-require('dotenv').config();
-
 const corsOptions = {
   origin: process.env.FRONTEND_URL,
   credentials: true,
@@ -53,6 +51,7 @@ if (process.env.NODE_ENV !== 'production') {
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors(corsOptions));
+require('dotenv').config();
 
 const io = new Server(server, {
   cors: corsOptions
