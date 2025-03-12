@@ -104,7 +104,6 @@ function HackathonWebpage() {
             </div> 
             </div>
         </div>
-              
         </>
     );     
 

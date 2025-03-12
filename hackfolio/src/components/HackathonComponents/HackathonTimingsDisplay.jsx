@@ -103,9 +103,6 @@ function HackathonTimingsDisplay(props) {
     }
 
     async function handleClick() {
-        if(!localStorage.getItem("lastname")) {
-            navigate("/signin") 
-         }
         if(flag === true) {
             navigate(`/hackathon/${name}/projectSubmission`);
         }
