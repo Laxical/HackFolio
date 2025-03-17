@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import LoadingPage from "../loading";
 
 
 function TeamDisplay(props) {
@@ -32,9 +33,7 @@ function TeamDisplay(props) {
 
     if(loading) {
         return(
-            <div className="flex justify-center">
-                Loading....
-            </div>
+            <LoadingPage/>
         );
     }
 

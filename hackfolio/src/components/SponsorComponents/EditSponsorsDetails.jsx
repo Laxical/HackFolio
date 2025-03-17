@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-
+import LoadingPage from '../loading';
 const token = localStorage.getItem('data');
 
 function EditSponsorsDetails() {
@@ -126,7 +126,7 @@ function EditSponsorsDetails() {
         );
     }
 
-    if (data === null) return <div className="text-black">Loading...</div>;
+    if (data === null) return <LoadingPage/>;
 
     return (
         <div className="text-black">
@@ -175,7 +175,6 @@ function EditSponsorsDetails() {
                 </div>
 
                 {renderEditableField("Description", "description", formData.description)}
-                {renderEditableField("Verification Status", "verificationStatus", formData.verificationStatus)}
 
                 <button onClick={submitHandle} className="edit-inp w-auto bg-[#5f3abd] hover:bg-[#5f3abd] text-white font-medium py-3 px-6 rounded focus:outline-none focus:shadow-outline edit-btn mt-4">
                     Save Changes

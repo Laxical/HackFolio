@@ -181,7 +181,7 @@ function ProjectForm() {
                   className="w-full px-4 py-2  text-black rounded-lg focus:outline-none"
                 />
               </div>
-              <div className="mb-6">
+              {/* <div className="mb-6">
                 <label className="block text-black font-bold mb-2">Cover Image</label>
                 <input
                   type="file"
@@ -189,7 +189,7 @@ function ProjectForm() {
                   onChange={(e) => handleFileChange(e, setCoverimage)}
                   className="w-full px-4 py-2  text-black rounded-lg focus:outline-none"
                 />
-              </div>
+              </div> */}
               <div className="mb-6">
                 <label className="block text-black font-bold mb-2">Project Images</label>
                 <input

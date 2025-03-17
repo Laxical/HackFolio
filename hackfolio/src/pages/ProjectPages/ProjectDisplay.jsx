@@ -4,7 +4,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom"; // Import useParams to extract route params
 import Header from "../../components/Header";
 import ReactingNavBar from "../../components/ReactingNavBar";
-
+import LoadingPage from "../../components/loading";
 const Project_display = () => {
   const { projectId } = useParams(); // Extract projectId from the URL
   const [project, setProject] = useState(null);
@@ -26,7 +26,7 @@ const Project_display = () => {
     fetchUserProject();
   }, [projectId]); // Fetch project data when projectId changes
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <LoadingPage/>;
   if (error) return <div>Error: {error}</div>;
 
   return (

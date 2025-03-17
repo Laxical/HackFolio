@@ -9,7 +9,7 @@ import TeamDisplay from "../../components/HackathonComponents/TeamDisplay";
 import Header from '../../components/Header';
 import ReactingNavBar from '../../components/ReactingNavBar';
 import HackathonTimingsDisplay from '../../components/HackathonComponents/HackathonTimingsDisplay';
-
+import LoadingPage from '@/components/loading';
 function EditRegisteredHackathonDetails() {
     const [selection, setSelection] = useState(0);
     const [inTeam, setInTeam] = useState(false);

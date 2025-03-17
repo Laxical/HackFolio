@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { io } from "socket.io-client";
 import Header from "../Header";
 import ReactingNavBar from "../../components/ReactingNavBar"; // Assuming ReactingNavBar is the Navbar component
-
+import LoadingPage from "../loading";
 // Get the token from localStorage
 const token = localStorage.getItem('data');
 
@@ -103,7 +103,7 @@ const SponsorDetail = () => {
     }
   }
 
-  if (loading) return <div>Loading sponsor details...</div>;
+  if (loading) return <LoadingPage/>;
   if (error) return <div>{error}</div>;
 
   return (

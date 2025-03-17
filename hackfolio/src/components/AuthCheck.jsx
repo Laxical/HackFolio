@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Outlet, Navigate } from 'react-router-dom';
 import axios from 'axios';
+import LoadingPage from "../components/loading";
 
 function AuthCheck() {
   const [isExp, setIsExp] = useState(false);
@@ -28,7 +29,7 @@ function AuthCheck() {
   }, []);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <LoadingPage/>;
   }
 
   return <Outlet />

@@ -6,7 +6,7 @@ import { useParams, Link } from "react-router-dom"; // Import Link for navigatio
 import ReactingNavBar from "../../components/ReactingNavBar";
 import "../../styles/userDahboard.css"; // Import custom CSS for background animation
 import { motion } from "framer-motion"; // Import motion for animations
-
+import LoadingPage from "../../components/loading";
 const UserDashboard = () => {
   const { username } = useParams();
 
@@ -47,7 +47,7 @@ const UserDashboard = () => {
     }
   }, [username]);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <LoadingPage/>;
   if (error) return <div>Error: {error}</div>;
 
   const handleProfileClick = () => {

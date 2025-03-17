@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom"
 import React from "react";
-
 //common components
 import PrivateRoute from "./components/PrivateRoute";
 import AuthCheck from "./components/AuthCheck";

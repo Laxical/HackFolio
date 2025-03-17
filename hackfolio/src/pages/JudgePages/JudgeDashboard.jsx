@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import ReactingNavBar from '../../components/ReactingNavBar';
 import { motion } from "framer-motion";
-
+import LoadingPage from '../../components/loading';
 const JudgeDashboard = () => {
     const [teams, setTeams] = useState([]); 
     const [criteria, setCriteria] = useState([]); 
@@ -205,8 +205,9 @@ const JudgeDashboard = () => {
                                 </motion.div>
                             ))
                         ) : (
-                            <p>Loading teams...</p>
-                        )}
+                            <LoadingPage/>
+
+)}
                     </div>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams,useNavigate } from 'react-router-dom';
-
+import LoadingPage from '../loading';
 function EditHackathonDetails(props) {
     const { name } = useParams();
     const [data, setData] = useState(null);
@@ -44,6 +44,7 @@ function EditHackathonDetails(props) {
               });
             if(response.status === 403) navigate('/Error403');
             const arr = await response.json();
+            console.log(arr);
             setData(arr.data);
             setHackName(arr.data.hackathonName);
             setFormData({
@@ -119,7 +120,7 @@ function EditHackathonDetails(props) {
         setFormData(prev => ({ ...prev, contactLinks: newArr }));
     }
 
-    if (data === null) return <div>Loading...</div>;
+    if (data === null) return <LoadingPage/>;
 
     return (
         <div className="">

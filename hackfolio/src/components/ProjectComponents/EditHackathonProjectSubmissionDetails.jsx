@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import Header from "../Header";
 import ReactingNavBar from "../ReactingNavBar";
+import LoadingPage from "../loading";
 
 const EditHackathonProjectSubmissionDetails = () => {
   const { projectId } = useParams();
@@ -81,7 +82,7 @@ const EditHackathonProjectSubmissionDetails = () => {
     }
   };
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <LoadingPage/>;
   if (error) return <div>Error: {error}</div>;
 
   return (

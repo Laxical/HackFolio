@@ -6,6 +6,8 @@ import "../../styles/Homepage.css"; // Assuming the custom styles are available
 import Header from "../../components/Header";
 import ReactingNavBar from "../../components/ReactingNavBar";
 import DisplaySponsor from "../../components/SponsorComponents/DisplaySponers";
+import LoadingPage from "../../components/loading";
+
 
 const SponsorList = () => {
   const [sponsors, setSponsors] = useState([]);
@@ -36,7 +38,7 @@ const SponsorList = () => {
   };
 
   // Loading and error states
-  if (loading) return <div>Loading sponsors...</div>;
+  if (loading) return <LoadingPage/>;
   if (error) return <div>{error}</div>;
 
   return (

@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import ProjectCard from "../ProjectComponents/UserProjectCard";
 import { Link, useNavigate } from "react-router-dom";
+import LoadingPage from '../loading';
 
 const HackathonProjectDisplay = () => {
   const [projects, setProjects] = useState([]);
@@ -16,6 +17,7 @@ const HackathonProjectDisplay = () => {
       try {
         console.log(name);
         const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/project/hackathonprojects/${name}`);
+        console.log(response.data);
         setProjects(response.data);
         setLoading(false);
       } catch (err) {
@@ -34,7 +36,7 @@ const HackathonProjectDisplay = () => {
   }, [name]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <>loading...</>;
   }
 
   if (error) {

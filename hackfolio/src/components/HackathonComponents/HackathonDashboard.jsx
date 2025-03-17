@@ -14,8 +14,9 @@ const HackathonDashboard = () => {
   useEffect(() => {
     const fetchTeams = async () => {
       try {
+        console.log("hit");
         const response = await axios.get(
-          `/api/hackathon/registeredParticipants/${name}`
+          `${import.meta.env.VITE_BACKEND_URL}/api/hackathon/registeredParticipants/${name}`
         );
         console.log(response);
         setTeams(response.data.response);
@@ -31,7 +32,7 @@ const HackathonDashboard = () => {
   const handleViewDetails = async (teamCode) => {
     try {
       const response = await axios.get(
-        `/api/hackathon/registeredParticipants/teamDetails/${teamCode}`
+        `${import.meta.env.VITE_BACKEND_URL}/api/hackathon/registeredParticipants/teamDetails/${teamCode}`
       );
       if(response.status === 403) navigate('/Error403');
       setTeamMembers(response.data.response); // Assume the API returns an array of team members

@@ -198,7 +198,7 @@ hack_register.route('/registeredParticipants/:hackathonName')
 
 
         const response= await teamCodeSchema.find({hackathonName: hackathonName}); 
-        
+     
         
         return res.status(200).json({response})
 

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import HackathonsDisplayCard from "../../components/HomeComponents/Hackcard";
+import LoadingPage from "../loading";
 
 function HackList() {
     const [data, setData] = useState([]);
@@ -32,9 +33,7 @@ function HackList() {
 
     if (data.length === 0) {
         return (
-            <div className="flex justify-center mt-10 text-lg text-gray-500">
-                Loading hackathons...
-            </div>
+          <LoadingPage/>
         );
     }
 

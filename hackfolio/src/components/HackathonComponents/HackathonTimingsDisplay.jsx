@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Calendar, Award, Clock } from "lucide-react"
 import "../../styles/hack_info_card.css";
-
+import LoadingPage from '../loading';
 function HackathonTimingsDisplay(props) {
     const { name } = useParams();
     const navigate = useNavigate();
@@ -148,8 +148,7 @@ function HackathonTimingsDisplay(props) {
 
     }
 
-    if (data === null) return <div>Loading...</div>;
-
+    if (data === null) return <LoadingPage/>;
     const formatDate = (dateString) => {
         const date = new Date(dateString)
         return date.toLocaleDateString("en-US", {

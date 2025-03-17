@@ -26,17 +26,17 @@ function HackathonWebpage() {
             
 
                         <motion.div
-                            className="fixed right-[400px] bottom-[170px] h-24 w-24 rounded-xl bg-blue-300"
+                            className="fixed right-[400px] bottom-[170px] h-20 w-24 rounded-xl bg-blue-300 "
                             initial={{ opacity: 0, scale: 0 }}
                             animate={{ opacity: 1, scale: 2 }}
                             transition={{ duration: 0.5, delay: 0.3 }}
                         />
-                        <motion.div
-                            className="fixed right-[400px] bottom-[230px] h-32 w-48 rounded-full bg-yellow-400"
+                        {/* <motion.div
+                            className="fixed right-[400px] bottom-[230px] h-32 w-48 rounded-full bg-yellow-400 z-100"
                             initial={{ opacity: 0, scale: 0 }}
                             animate={{ opacity: 1, scale: 1.2 }}
                             transition={{ duration: 0.5, delay: 0.4 }}
-                        />
+                        /> */}
                         <motion.div
                             className="fixed bottom-[140px] right-[320px] h-24 w-24 rounded-full bg-purple-400"
                             initial={{ opacity: 0, scale: 0 }}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Outlet, Navigate } from 'react-router-dom';
 import axios from 'axios';
+import LoadingPage from './loading';
 
 const PrivateRoute = ({role}) => {
   const [Rolebool, setRolebool] = useState(false);
@@ -29,7 +30,7 @@ const PrivateRoute = ({role}) => {
   }, []);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <LoadingPage/>;
   }
 
   return Rolebool ? <Outlet /> : <Navigate to="/signin" />;

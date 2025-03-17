@@ -4,7 +4,7 @@ import HackathonDetailsForm from "../../components/HackathonComponents/Hackathon
 import HackathonWebpageContentForm from "../../components/HackathonComponents/HackathonWebpageContentForm";
 import Header from "../../components/Header";
 import ReactingNavBar from "../../components/ReactingNavBar";
-
+import LoadingPage from "../../components/loading";
 function FillFullHackathonDetails() {
     const [completed, setCompleted] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
@@ -44,7 +44,7 @@ function FillFullHackathonDetails() {
                 <ReactingNavBar />
                 <div className="space-y-3 size-full">
                     <Header />
-                    {isLoading && <div>Loading....</div>}
+                    {isLoading && <LoadingPage/>}
                     {completed === 0 && !isLoading &&
                         <div className="flex items-center justify-center min-h-screen">
                             <div className="w-full max-w-4xl bg-white rounded-lg shadow-lg p-8">
@@ -55,19 +55,8 @@ function FillFullHackathonDetails() {
                                 </div>
                                 <div className="space-y-8">
                                     <HackathonDetailsForm completed={completed} setCompleted={setCompleted} />
-                                    {/* {completed === 2 && <Org_form4 completed={completed} setCompleted={setCompleted} />} */}
                                 </div>
-                                {/* <div className="mt-8">
-                        <div className="w-full bg-gray-200 rounded-full h-2.5">
-                            <div
-                                className="bg-indigo-600 h-2.5 rounded-full transition-all duration-300"
-                                style={{ width: `${(completed / 2) * 100}%` }}
-                            ></div>
-                        </div>
-                        <div className="text-center text-gray-500 mt-2">
-                            Step {completed + 1} of 3
-                        </div>
-                    </div> */}
+                           
                             </div>
                         </div>
                     }

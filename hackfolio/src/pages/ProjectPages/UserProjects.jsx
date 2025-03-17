@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import ReactingNavBar from "../../components/ReactingNavBar";
 import ParaAnimation from "./ParaAnimation";
 import { motion } from "framer-motion";
-
+import LoadingPage from "../../components/loading";
 function UserProjects() {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -34,7 +34,7 @@ function UserProjects() {
     fetchProject();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <LoadingPage/>;
   if (error) return <div>Error: {error}</div>;
 
   return (

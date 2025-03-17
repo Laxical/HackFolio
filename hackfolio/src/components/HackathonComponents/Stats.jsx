@@ -3,10 +3,10 @@ import { Bar } from 'react-chartjs-2';
 import 'chart.js/auto';
 import { useParams } from "react-router-dom";
 import axios from 'axios';
-
+import LoadingPage from '../loading';
 const Stats = () => {
   const { name } = useParams();
-  const [teams, setTeams] = useState(null);
+  const [teams, setTeams] = useState([]);
   const [stats, setStats] = useState({
     total: 1000,
     teams: 0,
@@ -33,7 +33,7 @@ const Stats = () => {
     const fetchTeams = async () => {
       try {
         const response = await axios.get(
-          `/api/hackathon/registeredParticipants/${name}`
+          `${import.meta.env.VITE_BACKEND_URL}/api/hackathon/registeredParticipants/${name}`
         );
         console.log(response.data.response);
         setTeams(response.data.response);
@@ -182,7 +182,7 @@ const Stats = () => {
         {chartData && chartData.labels.length > 0 ? (
           <Bar data={chartData} options={options} />
         ) : (
-          <p>Loading chart...</p>
+          <LoadingPage/>
         )}
       </div>
 
