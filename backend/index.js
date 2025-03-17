@@ -26,7 +26,7 @@ const userProfile = require("./controller/userProfileEdit");
 require('dotenv').config();
 
 const corsOptions = {
-  origin: process.env.FRONTEND_URL,
+  origin: "http://localhost:3000",
   credentials: true,
   httpOnly: true ,
   secure: true,

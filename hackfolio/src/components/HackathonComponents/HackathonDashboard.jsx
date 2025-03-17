@@ -17,6 +17,7 @@ const HackathonDashboard = () => {
         const response = await axios.get(
           `/api/hackathon/registeredParticipants/${name}`
         );
+        console.log(response);
         setTeams(response.data.response);
       } catch (error) {
         console.error("Error fetching teams:", error);

@@ -6,7 +6,7 @@ import axios from 'axios';
 
 const Stats = () => {
   const { name } = useParams();
-  const [teams, setTeams] = useState([]);
+  const [teams, setTeams] = useState(null);
   const [stats, setStats] = useState({
     total: 1000,
     teams: 0,

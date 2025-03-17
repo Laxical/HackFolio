@@ -33,11 +33,11 @@ function EditOrganizedHackathonDetails() {
                                     className={`edit-choice-btn text-2xl font-thin block mt-5 px-5 ${selected === 1 ? 'active' : ''}`}>
                                     Webpage
                                 </button>
-                                <button
+                                {/* <button
                                     onClick={() => setSelected(2)}
                                     className={`edit-choice-btn text-2xl font-thin block mt-5 px-5 ${selected === 2 ? 'active' : ''}`}>
                                     Dashboard
-                                </button>
+                                </button> */}
                                 <button
                                     onClick={() => setSelected(3)}
                                     className={`edit-choice-btn text-2xl font-thin block mt-5 px-5 ${selected === 3 ? 'active' : ''}`}>
@@ -48,11 +48,11 @@ function EditOrganizedHackathonDetails() {
                                     className={`edit-choice-btn text-2xl font-thin block mt-5 px-5 ${selected === 4 ? 'active' : ''}`}>
                                     Add Evaluation Criteria
                                 </button>
-                                <button onClick={() => setSelected(5)}
+                                {/* <button onClick={() => setSelected(5)}
                                     className={`edit-choice-btn text-2xl font-thin block mt-5 px-5 ${selected === 5 ? 'active' : ''}`}>
                                     Stats
 
-                                </button>
+                                </button> */}
                                 <button                     onClick={()=>setSelected(6)}
                                                     className={`edit-choice-btn text-2xl font-thin block mt-5 px-5 ${selected === 5 ? 'active' : ''}`}>
                                                     View team scores
@@ -71,11 +71,11 @@ function EditOrganizedHackathonDetails() {
                                     <EditHackathonWebsite />
                                 </div>
                             )}
-                            {selected === 2 && (
+                            {/* {selected === 2 && (
                                 <div className='editCard bg-[rgb(251,251,251)]'>
                                     <HackathonDashboard />
                                 </div>
-                            )}
+                            )} */}
                             {selected === 3 && (
                                 <div className='editCard bg-[rgb(251,251,251)]'>
                                     <AddJudge />
@@ -86,11 +86,11 @@ function EditOrganizedHackathonDetails() {
                                     <AddEvaluationCriteria />
                                 </div>
                             )}
-                            {selected === 5 && ( // Render new component when selected
+                            {/* {selected === 5 && ( // Render new component when selected
                                 <div className='editCard bg-[rgb(251,251,251)]'>
                                     <Stats />
                                 </div>
-                            )}
+                            )} */}
                                 {selected === 6 && ( // Render new component when selected
                         <div className='editCard bg-[rgb(251,251,251)]'>
                             <ViewScore/>
